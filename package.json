@@ -1,5 +1,5 @@
 {
-  "name": "lotion",
+  "name": "lotion-patched",
   "author": "Lotion Team",
   "version": "1.5.1",
   "private": true,
@@ -36,7 +36,7 @@
     "make:linux": "electron-forge make --platform=linux",
     "dist": "electron-forge make --platform=linux",
     "playwright": "playwright test",
-    "postinstall": "echo 'Lotion postinstall complete'",
+    "postinstall": "node scripts/patch-electron-installer-redhat.js && echo 'Lotion postinstall complete'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "overrides": {
@@ -102,6 +102,8 @@
           ],
           "config": {
             "options": {
+              "name": "lotion",
+              "bin": "lotion",
               "maintainer": "Lotion Team",
               "homepage": "https://github.com/puneetsl/lotion",
               "description": "Unofficial Notion.so Desktop app for Linux",
@@ -120,6 +122,8 @@
           ],
           "config": {
             "options": {
+              "name": "lotion",
+              "bin": "lotion",
               "license": "MIT",
               "homepage": "https://github.com/puneetsl/lotion",
               "description": "Unofficial Notion.so Desktop app for Linux",
@@ -151,5 +155,5 @@
       ]
     }
   },
-  "productName": "Lotion Patched"
+  "productName": "Lotion"
 }
